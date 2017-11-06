@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">RMUTSV Service</string>
+    <string name="thai_name">ศรีวิชัย แอพ</string>
+    <string name="user">User :</string>
+    <string name="password">password</string>
+    <string name="new_register">New Register</string>
 </resources>

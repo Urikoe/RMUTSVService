@@ -32,6 +32,14 @@ public class MainFragment extends Fragment {
         textView .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                Replace Fragment
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contentFragmentMain,new RegisterFragment())
+                        .addToBackStack(null)  //back กลับแล้วมาหน้าหลัก
+                        .commit();
+
+
 
             }
         });

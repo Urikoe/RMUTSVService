@@ -4,16 +4,20 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import app.urikoemobile.kanchana.rmutsvservice.MainActivity;
 import app.urikoemobile.kanchana.rmutsvservice.R;
 import app.urikoemobile.kanchana.rmutsvservice.utility.MyAlert;
+import app.urikoemobile.kanchana.rmutsvservice.utility.MyConstant;
+import app.urikoemobile.kanchana.rmutsvservice.utility.UploadNewUser;
 
 /**
  * Created by Urikoe on 11/7/2017.
@@ -96,11 +100,44 @@ public class RegisterFragment extends Fragment {
 
                 } else {
 //                    Choosed Chice
+                    uploadUserToserver();
                 }
 
             }//OnClick
 
         });
+
+
+    }
+
+    private void uploadUserToserver() {
+
+        String tag = "8novV1";
+        try{
+
+            MyConstant myConstant = new MyConstant();
+            UploadNewUser uploadNewUser = new UploadNewUser(getActivity());
+            uploadNewUser.execute(nameString,categoryString,userString,
+                    passwordString,myConstant.getUrlPostData());
+            String result = uploadNewUser.get();
+            Log.d(tag, "Result ==>"+result);
+
+            if (Boolean.parseBoolean(result)) {
+//                Success Upload
+                getActivity().getSupportFragmentManager().popBackStack();
+                Toast.makeText(getActivity(),"Success Update User",
+                        Toast.LENGTH_SHORT).show();
+
+            } else {
+//                  Error Upload
+                Toast.makeText(getActivity(),"Cannot Update User",Toast.LENGTH_SHORT).show();
+            }
+
+        }catch (Exception e){
+            Log.d(tag, "e ==>" + e.toString());
+
+        }
+
 
 
     }

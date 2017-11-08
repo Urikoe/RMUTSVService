@@ -5,4 +5,5 @@
     <string name="password">password</string>
     <string name="new_register">New Register</string>
     <string name="name">Name :</string>
+    <string name="title_activity_seller">Seller</string>
 </resources>

@@ -1,5 +1,6 @@
 package app.urikoemobile.kanchana.rmutsvservice.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -17,6 +18,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import app.urikoemobile.kanchana.rmutsvservice.R;
+import app.urikoemobile.kanchana.rmutsvservice.SellerActivity;
 import app.urikoemobile.kanchana.rmutsvservice.utility.GetAllData;
 import app.urikoemobile.kanchana.rmutsvservice.utility.MyAlert;
 import app.urikoemobile.kanchana.rmutsvservice.utility.MyConstant;
@@ -105,6 +107,17 @@ public class MainFragment extends Fragment {
             } else if (passwordString.equals(userStrings1[4])) {
                 Toast.makeText(getActivity(), "Welcome"+userStrings1[1],
                         Toast.LENGTH_SHORT).show();
+
+
+                if (userStrings1[2].equals("Saler")) {
+                    //Saler
+                    Intent intent = new Intent(getActivity(), SellerActivity.class);
+                    intent.putExtra("Login", userStrings1);
+                    getActivity().startActivity(intent);
+                } else {
+
+                }
+
             } else {
                 MyAlert myAlert = new MyAlert(getActivity());
                 myAlert.myDialog("Password False",

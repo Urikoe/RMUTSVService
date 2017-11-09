@@ -7,6 +7,7 @@ package app.urikoemobile.kanchana.rmutsvservice.utility;
 public class MyConstant {
     private String urlPostData = "http://androidthai.in.th/rmuts/addDataMaster.php";
     private String urlGetAlluser = "http://androidthai.in.th/rmuts/getAllDataMaster.php";
+    private String urlDeleteData = "http://androidthai.in.th/rmuts/deleteDataMaster.php";
 
     public String getUrlGetAlluser() {
         return urlGetAlluser;
@@ -17,5 +18,11 @@ public class MyConstant {
 
     }
 
+    public String getUrlDeleteData() {
+        return urlDeleteData;
+    }
 
+    public void setUrlDeleteData(String urlDeleteData) {
+        this.urlDeleteData = urlDeleteData;
+    }
 }//Main Class

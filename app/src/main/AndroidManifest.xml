@@ -39,7 +39,8 @@
 
         <activity
             android:name=".SellerActivity"
-            android:label="@string/title_activity_seller"></activity>
+            android:label="@string/title_activity_seller" />
+        <activity android:name=".MyServiceActivity"></activity>
     </application>
 
 </manifest>

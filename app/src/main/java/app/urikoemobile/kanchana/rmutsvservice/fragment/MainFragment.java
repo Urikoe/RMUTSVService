@@ -17,6 +17,7 @@ import android.widget.Toast;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import app.urikoemobile.kanchana.rmutsvservice.MyServiceActivity;
 import app.urikoemobile.kanchana.rmutsvservice.R;
 import app.urikoemobile.kanchana.rmutsvservice.SellerActivity;
 import app.urikoemobile.kanchana.rmutsvservice.utility.GetAllData;
@@ -107,16 +108,20 @@ public class MainFragment extends Fragment {
             } else if (passwordString.equals(userStrings1[4])) {
                 Toast.makeText(getActivity(), "Welcome"+userStrings1[1],
                         Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), MyServiceActivity.class);
+                intent.putExtra("Login", userStrings1);
+                getActivity().startActivity(intent);
+                getActivity().finish(); //ให้ทำการ login ใหม่ หากมีการหดหน้า login ออกไป
 
-
-                if (userStrings1[2].equals("Saler")) {
+                //เช็ค user ที่ login เ้ข้ามา เป็น Saler หรือ Buyer
+    //            if (userStrings1[2].equals("Saler")) {
                     //Saler
-                    Intent intent = new Intent(getActivity(), SellerActivity.class);
-                    intent.putExtra("Login", userStrings1);
-                    getActivity().startActivity(intent);
-                } else {
+     //               Intent intent = new Intent(getActivity(), SellerActivity.class);
+     //               intent.putExtra("Login", userStrings1);
+      //              getActivity().startActivity(intent);
+      //          } else {
 
-                }
+       //         }
 
             } else {
                 MyAlert myAlert = new MyAlert(getActivity());

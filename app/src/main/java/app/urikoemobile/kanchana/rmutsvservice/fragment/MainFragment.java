@@ -113,6 +113,9 @@ public class MainFragment extends Fragment {
                 getActivity().startActivity(intent);
                 getActivity().finish(); //ให้ทำการ login ใหม่ หากมีการหดหน้า login ออกไป
 
+
+
+
                 //เช็ค user ที่ login เ้ข้ามา เป็น Saler หรือ Buyer
     //            if (userStrings1[2].equals("Saler")) {
                     //Saler

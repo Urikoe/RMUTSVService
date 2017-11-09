@@ -4,7 +4,10 @@
     android:layout_height="match_parent">
 
     <!--Toolbar-->
+    <!--เปลี่ยนสีตัวอักษรบน TitileBar-->
     <android.support.v7.widget.Toolbar
+
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary"
